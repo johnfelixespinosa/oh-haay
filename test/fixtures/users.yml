@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  meetup_id: MyString
+  meetup_profile_url: MyString
+  photo_url: MyString
+  city: MyString
+
+two:
+  name: MyString
+  meetup_id: MyString
+  meetup_profile_url: MyString
+  photo_url: MyString
+  city: MyString
