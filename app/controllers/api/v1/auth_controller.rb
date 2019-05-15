@@ -1,7 +1,7 @@
 class Api::V1::AuthController < ApplicationController
+  
   def meetup_request
     client_id = Rails.application.credentials.meetup[:client_id]
-    client_id = Rails.application.credentials.meetup[:secret]
     redirect_uri = "http://localhost:3001/api/v1/auth"
     meetup_url = "https://secure.meetup.com/oauth2/authorize?client_id=#{client_id}&response_type=code&redirect_uri=#{redirect_uri}"
     redirect_to meetup_url 
@@ -11,26 +11,26 @@ class Api::V1::AuthController < ApplicationController
     authenticator = Authenticator.new
     user_info = authenticator.meetup(params[:code])
 
-    # login = user_info[:login]
-    # name = user_info[:name]
-    # avatar_url = user_info[:avatar_url]
+    name = user_info[:name]
+    meetup_id = user_info[:meetup_id]
+    meetup_profile_url = user_info[:meetup_profile_url]
+    photo_url = user_info[:photo_url]
+    city = user_info[:city]
 
     # Generate token...
-    token = TokiToki.encode(login)
+    token = TokenHandler.encode(meetup_id)
     # ... create user if it doesn't exist...
-    User.where(login: login).first_or_create!(
+    User.where(meetup_id: meetup_id).first_or_create!(
       name: name,
-      avatar_url: avatar_url
+      meetup_id: meetup_id,
+      meetup_profile_url: meetup_profile_url,
+      photo_url: photo_url,
+      city: city
     )
     # ... and redirect to client app.
-    redirect_to "#{issuer}?token=#{token}"
-  rescue StandardError => error
-    redirect_to "#{issuer}?error=#{error.message}"
+    redirect_to "http://localhost:3000?token=#{token}"
+  # rescue StandardError => error
+  #   redirect_to "#{issuer}?error=#{error.message}"
   end
 
-  private
-
-  def issuer
-    ENV['FLASHCARDS_CLIENT_URL']
-  end
 end
