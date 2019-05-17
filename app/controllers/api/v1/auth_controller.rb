@@ -1,4 +1,6 @@
 class Api::V1::AuthController < ApplicationController
+  skip_before_action :authorized
+  require 'pry'
   
   def meetup_request
     client_id = Rails.application.credentials.meetup[:client_id]
@@ -16,9 +18,9 @@ class Api::V1::AuthController < ApplicationController
     meetup_profile_url = user_info[:meetup_profile_url]
     photo_url = user_info[:photo_url]
     city = user_info[:city]
-
+    # binding.pry
     # Generate token...
-    token = TokenHandler.encode(meetup_id)
+    token = encode_token(meetup_id: meetup_id)
     # ... create user if it doesn't exist...
     User.where(meetup_id: meetup_id).first_or_create!(
       name: name,

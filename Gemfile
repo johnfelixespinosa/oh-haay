@@ -18,7 +18,7 @@ gem 'puma', '~> 3.11'
 gem 'rest-client'
 gem 'faraday'
 gem 'rack-cors'
-gem 'jwt', '~> 2.1'
+gem 'jwt'
 # gem 'active_model_serializers', '~> 0.10.9'
 gem 'pry'
 

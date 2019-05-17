@@ -3,10 +3,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      ##From client Login button
       get '/meetup', to: 'auth#meetup_request'
-      ##After meetup_request, redirect to with access code from meetup, exchange access code for token
       get '/auth', to: 'auth#meetup'
+      get '/profile', to: 'users#profile'
     end
   end
 end
