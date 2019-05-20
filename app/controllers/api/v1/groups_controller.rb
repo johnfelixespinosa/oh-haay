@@ -8,7 +8,7 @@ class Api::V1::GroupsController < ApplicationController
     resp = RestClient.get("https://api.meetup.com/self/groups", header)
     response = JSON.parse(resp.body)
     make_groups(response)
-    # binding.pry
+    render json: @current_user.groups
   end
 
   def make_groups(groups)
