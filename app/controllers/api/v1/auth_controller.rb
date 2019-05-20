@@ -18,6 +18,7 @@ class Api::V1::AuthController < ApplicationController
     meetup_profile_url = user_info[:meetup_profile_url]
     photo_url = user_info[:photo_url]
     city = user_info[:city]
+    access_token = user_info[:access_token]
     # binding.pry
     # Generate token...
     token = encode_token(meetup_id: meetup_id)
@@ -28,7 +29,7 @@ class Api::V1::AuthController < ApplicationController
       meetup_profile_url: meetup_profile_url,
       photo_url: photo_url,
       city: city,
-      access_token: token
+      access_token: access_token
     )
     # ... and redirect to client app.
     redirect_to "http://localhost:3000?token=#{token}"

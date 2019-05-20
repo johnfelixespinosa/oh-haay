@@ -16,7 +16,8 @@ class Authenticator
       meetup_id: user_profile_resp['id'],
       meetup_profile_url: user_profile_resp['link'],
       photo_url: user_profile_resp['photo']['highres_link'],
-      city: user_profile_resp['city']
+      city: user_profile_resp['city'],
+      access_token: access_token
     }
   end
 
