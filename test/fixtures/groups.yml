@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  meetup_group_id: MyString
+  group_link: MyString
+  group_key_photo_url: MyString
+  city: MyString
+  country: MyString
+
+two:
+  name: MyString
+  meetup_group_id: MyString
+  group_link: MyString
+  group_key_photo_url: MyString
+  city: MyString
+  country: MyString

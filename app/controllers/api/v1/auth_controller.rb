@@ -27,7 +27,8 @@ class Api::V1::AuthController < ApplicationController
       meetup_id: meetup_id,
       meetup_profile_url: meetup_profile_url,
       photo_url: photo_url,
-      city: city
+      city: city,
+      access_token: token
     )
     # ... and redirect to client app.
     redirect_to "http://localhost:3000?token=#{token}"

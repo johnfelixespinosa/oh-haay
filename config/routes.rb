@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get '/meetup', to: 'auth#meetup_request'
       get '/auth', to: 'auth#meetup'
       get '/profile', to: 'users#profile'
+      get '/groups', to: 'groups#fetch_user_groups_info'
     end
   end
 end
