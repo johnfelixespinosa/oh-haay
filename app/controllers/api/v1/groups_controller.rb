@@ -7,19 +7,18 @@ class Api::V1::GroupsController < ApplicationController
     header = {Authorization: "Bearer #{access_token}"}
     resp = RestClient.get("https://api.meetup.com/self/groups", header)
     response = JSON.parse(resp.body)
-    render json: response
+    make_groups(response)
+    # binding.pry
+  end
 
-    # name = user_info[:name]
-    # meetup_id = user_info[:meetup_id]
-    # meetup_profile_url = user_info[:meetup_profile_url]
-    # photo_url = user_info[:photo_url]
-    # city = user_info[:city]
+  def make_groups(groups)
+    groups.each do |group|
+      @group = Group.from_json(group)
+
+      UserGroup.where(
+        user_id: @current_user.id,
+        group_id: @group.id).first_or_create
+    end
   end
 
 end
-
-# def fetch_meetup_user_info(access_token)
-#   header = {Authorization: "Bearer #{access_token}"}
-#   resp = RestClient.get("https://api.meetup.com/2/member/self", header)
-#   JSON.parse(resp.body)
-# end
