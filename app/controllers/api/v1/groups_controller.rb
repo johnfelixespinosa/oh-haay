@@ -21,27 +21,33 @@ class Api::V1::GroupsController < ApplicationController
     end
   end
 
-  def fetch_events(group)
-    access_token = @current_user.access_token
-    header = {Authorization: "Bearer #{access_token}"}
-    resp = RestClient.get("https://api.meetup.com/#{group.name.parameterize}/events", header)
-    response = JSON.parse(resp.body)
-    make_events(response, group)
+  def users
+    @meetup_group = Group.find_by_meetup_group_id(params[:group_id])
+    @group_users = @meetup_group.users
+
+    render json: @group_users
+  end
+
+end
+
+  # def fetch_events(group)
+  #   access_token = @current_user.access_token
+  #   header = {Authorization: "Bearer #{access_token}"}
+  #   resp = RestClient.get("https://api.meetup.com/#{group.name.parameterize}/events", header)
+  #   response = JSON.parse(resp.body)
+  #   make_events(response, group)
 
     # response.each do |event|
     #   @event = Event.from_json(event)
 
     #   group.events.first_or_create(@event)
     #   end
-  end
+  # end
 
-  def make_events(events, group)
-    events.each do |event|
-      @event = Event.from_json(event)
+  # def make_events(events, group)
+  #   events.each do |event|
+  #     @event = Event.from_json(event)
 
-      group.events.first_or_create(@event)
-    end
-  end
-
-
-end
+  #     group.events.first_or_create(@event)
+  #   end
+  # end
