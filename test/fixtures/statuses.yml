@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  working_on: MyString
+  need: MyString
+  offering: MyString
+  looking_for_work: false
+  looking_to_hire: false
+
+two:
+  working_on: MyString
+  need: MyString
+  offering: MyString
+  looking_for_work: false
+  looking_to_hire: false

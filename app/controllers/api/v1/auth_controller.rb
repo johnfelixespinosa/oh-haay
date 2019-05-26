@@ -9,7 +9,7 @@ class Api::V1::AuthController < ApplicationController
     redirect_to meetup_url 
   end
 
-  def meetup
+  def meetup_auth
     authenticator = Authenticator.new
     user_info = authenticator.meetup(params[:code])
 
