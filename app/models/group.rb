@@ -1,7 +1,7 @@
 class Group < ApplicationRecord
-  has_many :user_groups
-  has_many :users, through: :user_groups
-  has_many :events
+  has_many :members
+  has_many :users, through: :members
+  # has_many :events
 
   def self.from_json(json) 
     assignment_hash = {

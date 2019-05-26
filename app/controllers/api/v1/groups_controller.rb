@@ -15,7 +15,7 @@ class Api::V1::GroupsController < ApplicationController
   def make_groups(groups)
     groups.each do |group|
       @group = Group.from_json(group)
-      UserGroup.where(
+      Member.where(
         user_id: @current_user.id,
         group_id: @group.id).first_or_create
     end
