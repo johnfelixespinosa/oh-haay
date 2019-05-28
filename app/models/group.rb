@@ -1,7 +1,9 @@
 class Group < ApplicationRecord
   has_many :members
   has_many :users, through: :members
-  has_many :statuses, through: :users
+  
+  has_many :user_group_statuses
+  has_many :statuses, through: :user_group_statuses
   # has_many :events
 
   def self.from_json(json) 
