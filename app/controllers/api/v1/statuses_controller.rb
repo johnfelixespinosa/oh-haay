@@ -17,12 +17,15 @@ class Api::V1::StatusesController < ApplicationController
 
   def fetch
     @meetup_group = Group.find_by_meetup_group_id(params[:group_id])
+    @user = User.find_by_id(params[:user_id])
+   
     @user_group_status = UserGroupStatus.find_by(
       group_id: @meetup_group.id,
-      user_id: @current_user.id
+      user_id: @user.id
     )
+    # binding.pry
     @status = Status.find_by_id(@user_group_status.status_id)
-# binding.pry
+
     render json: @status
   end
 
