@@ -8,7 +8,8 @@ Rails.application.routes.draw do
       get '/profile', to: 'users#profile'
       get '/groups', to: 'groups#fetch_user_groups_info'
       get '/groups/:group_id/users', to: 'groups#users'
-
+      
+      get '/statuses/:group_id/fetch', to: 'statuses#fetch'
       post 'statuses/new', action: :add_new, controller: 'statuses'
 
       # post '/statuses/:group_id/new', to: 'statuses#add_new'

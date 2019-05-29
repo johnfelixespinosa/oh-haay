@@ -4,8 +4,8 @@ class Status < ApplicationRecord
 
   def self.from_json(json) 
     assignment_hash = {
-      working_on: (json["workingOn"] || ""),
-      need: (json["inNeedOf"] || ""),
+      working_on: (json["working_on"] || ""),
+      need: (json["need"] || ""),
       offering: (json["offering"] || "")
     }
     Status.find_or_create_by(assignment_hash)
