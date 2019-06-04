@@ -5,11 +5,11 @@
 ### WHY?
 For when you're attending your next tech meetup, and after everyone introduces theirselves, what they're working on, and what they don't mind helping others with, if you're like me and aren't too good with remembering names and faces, then you'll know why! Enjoy!
 
-  ![Homepage Image]( src/images/home-screenshot.png "Homepage")
+  ![Homepage Image]( app/lib/images/home-screenshot.png "Homepage")
 
   Adding user status to specific group.
 
-  ![Demo Gif]( src/images/oh-haay-demo.gif "Demo")
+  ![Demo Gif]( app/lib/images/oh-haay-demo.gif "Demo")
 
 ### Purpose
 Oh-Haay! is an application that directly populates a users groups through the Meetup API allowing them to see fellow group members whilst updating their status and informing others of their objectives for attending.
