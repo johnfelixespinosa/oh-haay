@@ -1,24 +1,39 @@
-# README
+# Oh-Haay!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### [Demo](https://jespnpcbuilderapp.herokuapp.com/)
 
-Things you may want to cover:
+### WHY?
+For when you're attending your next tech meetup, and after everyone introduces theirselves, what they're working on, and what they don't mind helping others with, if you're like me and aren't too good with remembering names and faces, then you'll know why! Enjoy!
 
-* Ruby version
+  ![Homepage Image]( src/images/home-screenshot.png "Homepage")
 
-* System dependencies
+  Adding user status to specific group.
 
-* Configuration
+  ![Demo Gif]( src/images/oh-haay-demo.gif "Demo")
 
-* Database creation
+### Purpose
+Oh-Haay! is an application that directly populates a users groups through the Meetup API allowing them to see fellow group members whilst updating their status and informing others of their objectives for attending.
 
-* Database initialization
+### Technologies and Resources
+  #### Frontend Client
+  * [JavaScript libraries (React, Redux)](https://react-redux.js.org/ "React Redux")
+  * [Redux Thunk Middleware](https://github.com/reduxjs/redux-thunk "Redux Thunk")
+  * [React-Router](https://github.com/ReactTraining/react-router "React Router")
+  * [Semantic UI React](https://react.semantic-ui.com/ "Semantic UI React")
+  * [Immerjs](https://github.com/immerjs/immer "Immerjs")
+  * [Unsplash Images](https://unsplash.com/ "Unsplash")
 
-* How to run the test suite
+ #### Backend Server
+  * [Ruby on Rails](https://rubyonrails.org/ "Ruby on Rails")
+  * [Json Web Tokens](https://jwt.io/ "JWT")
+  * [Meetup API](https://www.meetup.com/meetup_api/ "Meetup API")
+  * [Rest Client](https://github.com/rest-client/rest-client "Rest Client")
+  
+#### Report bugs using Github's [issues](https://github.com/johnfelixespinosa/oh-haay-client/issues)
+  Use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/johnfelixespinosa/oh-haay-client/issues/new); it's that easy!
 
-* Services (job queues, cache servers, search engines, etc.)
+### License
+  This project is being created open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
-* Deployment instructions
-
-* ...
+### Author
+  [John Espinosa](http://johnfelixespinosa.github.io/)
