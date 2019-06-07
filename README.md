@@ -1,4 +1,4 @@
-# Oh-Haay!
+# Oh-Haay! Rails API Backend
 
 ### [Live Site](https://stoic-archimedes-4e365d.netlify.com/)
 ### [Client Repo](https://github.com/johnfelixespinosa/oh-haay-client)
