@@ -32,7 +32,7 @@ class Api::V1::AuthController < ApplicationController
       access_token: access_token
     )
     # ... and redirect to client app.
-    redirect_to "https://stoic-archimedes-4e365d.netlify.com?token=#{token}"
+    redirect_to "http://localhost:3000?token=#{token}"
   # rescue StandardError => error
   #   redirect_to "#{issuer}?error=#{error.message}"
   end
