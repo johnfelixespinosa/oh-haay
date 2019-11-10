@@ -1,12 +1,12 @@
 class Api::V1::AuthController < ApplicationController
   skip_before_action :authorized
   require 'pry'
-  
+
   def meetup_request
     client_id = Rails.application.credentials.meetup[:client_id]
-    redirect_uri = "http://localhost:3001/api/v1/auth"
+    redirect_uri = "https://peaceful-castle-75215.herokuapp.com/api/v1/auth"
     meetup_url = "https://secure.meetup.com/oauth2/authorize?client_id=#{client_id}&response_type=code&redirect_uri=#{redirect_uri}"
-    redirect_to meetup_url 
+    redirect_to meetup_url
   end
 
   def meetup_auth
